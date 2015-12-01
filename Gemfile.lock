@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    intuition (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (>= 1.0.0)
+  intuition!
+
+BUNDLED WITH
+   1.10.6
