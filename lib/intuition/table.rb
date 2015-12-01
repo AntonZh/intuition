@@ -1,5 +1,7 @@
 module Intuition
   class Table
+    attr_reader :rows
+
     def initialize
       @rows = []
     end

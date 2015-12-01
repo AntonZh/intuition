@@ -2,9 +2,9 @@ require 'intuition/sheet'
 
 describe Intuition::Sheet do
   describe '.new' do
-    let(:name) { FFaker::Lorem.phrase  }
-    it 'takes sheet name' do
-      expect(described_class.new(name).name).to eq(name)
+    let(:title) { FFaker::Lorem.phrase  }
+    it 'takes sheet title' do
+      expect(described_class.new(title).title).to eq(title)
     end
   end
 

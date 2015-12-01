@@ -2,10 +2,10 @@ require_relative 'table'
 
 module Intuition
   class Sheet
-    attr_reader :name
+    attr_reader :title
 
-    def initialize(name)
-      @name = name
+    def initialize(title)
+      @title = title
     end
 
     def header(*value)
