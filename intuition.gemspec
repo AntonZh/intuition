@@ -7,15 +7,17 @@ Gem::Specification.new do |s|
   s.version     = Intuition::VERSION
   s.platform    = Gem::Platform::RUBY
 
-  s.summary     = "Reporting"
-  s.description = "Reporting"
-  s.authors     = ["Anton Zhavoronkov"]
+  s.summary     = 'Reporting'
+  s.description = 'Reporting'
+  s.authors     = ['Anton Zhavoronkov']
   s.email       = 'anton.zhavoronkov@gmail.com'
   s.homepage    = 'https://github.com/AntonZh/intuition'
 
-  s.add_development_dependency "bundler", ">= 1.0.0"
+  s.add_development_dependency 'bundler', '>= 1.0.0'
+  s.add_development_dependency 'rspec', '~> 3.4.0'
+  s.add_development_dependency 'simplecov', '~> 0.10.0'
 
-  s.files        = `git ls-files`.split("\n")
+  s.files        = `git ls-files`.split('\n')
   s.require_path = 'lib'
 
   s.license     = 'MIT'
