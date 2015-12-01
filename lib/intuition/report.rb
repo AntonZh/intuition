@@ -1,4 +1,5 @@
 require_relative 'sheet'
+require_relative 'result'
 
 module Intuition
   class Report
@@ -8,7 +9,7 @@ module Intuition
     end
 
     def result
-      calculate_if_didnt
+      calculate_if_needed
       @result
     end
 
@@ -21,11 +22,12 @@ module Intuition
     def calculate_if_needed
       calculate unless @calculated
       @calculated = true
+      @result = Result.new(@sheets)
     end
 
-    def sheet(name)
+    def sheet(name, &block)
       new_sheet = Sheet.new(name)
-      new_sheet.instance_exec &block if block_given?
+      new_sheet.instance_exec(&block) if block_given?
       add_sheet(new_sheet)
     end
 

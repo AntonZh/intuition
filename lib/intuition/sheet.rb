@@ -1,3 +1,5 @@
+require_relative 'table'
+
 module Intuition
   class Sheet
     attr_reader :name
@@ -6,18 +8,18 @@ module Intuition
       @name = name
     end
 
-    def header(header = nil)
-      if header
-        @header = header
+    def header(*value)
+      if value.any?
+        @header = [value].flatten
       else
         @header
       end
     end
 
-    def table
+    def table(&block)
       if block_given?
         @table = Table.new
-        new_table.instance_exec &block
+        @table.instance_exec &block
       else
         @table
       end
