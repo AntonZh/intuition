@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    intuition (0.0.1)
+    intuition (0.0.1.alpha1)
 
 GEM
   remote: http://rubygems.org/

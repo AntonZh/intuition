@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rspec', '~> 4.6.4'
   s.add_development_dependency 'ffaker', '~> 2.1.0'
 
-  s.files        = `git ls-files`.split('\n')
+  s.files        = `git ls-files`.split("\n")
   s.require_path = 'lib'
 
   s.license     = 'MIT'
