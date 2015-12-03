@@ -16,13 +16,26 @@ module Intuition
       end
     end
 
-    def table(&block)
+    def table(args = {}, &block)
       if block_given?
-        @table = Table.new
-        @table.instance_exec &block
+        @table = Table.new(args)
+        yield @table
+        @table.finalize
       else
-        @table
+        if args.is_a? Array
+          @table = Table.new
+          args.each {|r| @table.row(r) }
+          @table.finalize
+        end
       end
+      @table
+    end
+
+    def full_table
+      [header] + table.rows
+    end
+
+    def run_conversions(*args)
     end
   end
 end
