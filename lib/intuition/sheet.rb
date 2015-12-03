@@ -6,6 +6,7 @@ module Intuition
 
     def initialize(title)
       @title = title
+      @conversions = Hash.new([])
     end
 
     def header(*value)
@@ -31,11 +32,17 @@ module Intuition
       @table
     end
 
+    def conversion(type, &block)
+      @conversions[type] ||= []
+      @conversions[type] << Proc.new(&block)
+    end
+
     def full_table
       [header] + table.rows
     end
 
-    def run_conversions(*args)
+    def run_conversions(type, args)
+      @conversions[type].each{|c| c.call(self, args) }
     end
   end
 end

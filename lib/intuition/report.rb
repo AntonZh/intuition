@@ -43,6 +43,10 @@ module Intuition
       @sheets << sheet
     end
 
+    def sort_sheets!
+      @sheets.sort_by!{|s| s.title }
+    end
+
     def method_missing(m, *args, &block)
       if context && context.respond_to?(m)
         context.send(m, *args, &block)
